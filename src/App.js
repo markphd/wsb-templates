@@ -35,10 +35,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          {this.state.templates.map( item => {
-            return <p>{item.name} </p>
-          })}
         </p>
+        {this.state.templates.filter( item => {
+          let templatePages = item.pages.values();
+          for(const value of templatePages){
+            console.log(this.state.templateOrder.indexOf(value.id), value.id, item.name)
+          }
+        })}
       </div>
     );
   }
