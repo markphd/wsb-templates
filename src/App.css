@@ -41,7 +41,8 @@
 .TemplateListItem {
   width: 380px;
   height: 245px;
-  margin:5px;
+  margin-bottom: 20px;
+  padding: 30px 10px;
 }
 
 .TemplateListItem > img {
@@ -49,6 +50,9 @@
   height: 100%;
 }
 
+.TemplateListItem > p {
+  text-align: left;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
