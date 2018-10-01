@@ -22,11 +22,33 @@
   font-size: large;
 }
 
+.TemplateContainer {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
 .TemplateList {
   max-width: 100%;
+  list-style:  none;
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin:  0;
+  padding: 0;
 }
+
+.TemplateListItem {
+  width: 380px;
+  height: 245px;
+  margin:5px;
+}
+
+.TemplateListItem > img {
+  width: 100%;
+  height: 100%;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
