@@ -4,6 +4,7 @@ import './App.css';
 import Fade from 'react-reveal/Fade';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import templateOrder from './TemplateOrder';
+import TemplatePreview from './Preview'
 
 
 class App extends Component {
@@ -57,8 +58,19 @@ class App extends Component {
         <div className="TemplateContainer">
           <ul className="TemplateList">
             {templateOrder.map( (item) => {
-              return <Fade><li key={item.pageId} className="TemplateListItem"><Fade><p>{item.name}</p></Fade><img onClick={this.onPreviewTemplate} src={`img/${item.pageId}.png`} data-template={`${item.pageId}`}/></li></Fade>
+              return (
+                <Fade>
+                  <li key={item.pageId} className="TemplateListItem">
+                    <Fade><p>{item.name}</p></Fade>
+                    <Link to={`${item.id}`}>
+                    <img onClick={this.onPreviewTemplate} src={`img/${item.pageId}.png`} data-template={`${item.pageId}`}/>
+                    </Link>
+                  </li>
+                </Fade>
+              )
             })}
+            <Route path="/44FA4D67-10DD-4F47-99C4-5D77C9985BF8" 
+                   render={() => (<div className="preview"><Link exact to="/"> X Close </Link> This is the PREVIEW mode </div>)}/>
           </ul>
         </div>
       </div>
